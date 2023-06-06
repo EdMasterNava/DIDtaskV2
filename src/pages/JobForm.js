@@ -19,15 +19,15 @@ function JobForm() {
     const [page, setPage] = React.useState(0);
     // const { contract } = useEvmAuth();
     const handleInput = (event) => {
-        const e = event.target;
-        if(e.id === 'title'){
-            setTitle(e.value);
+        const {id, value} = event.target;
+        if(id === 'title'){
+            setTitle(value);
         }
-        if(e.id === 'description'){
-            setDescription(e.value);
+        if(id === 'description'){
+            setDescription(value);
         }
-        if(e.id === 'certification'){
-            setCertification(e.value);
+        if(id === 'certification'){
+            setCertification(value);
         }
     }
     const nextPage = () => {
@@ -40,17 +40,17 @@ function JobForm() {
             setPage(prev => prev - 1);
         }
     }
-    // const handleClick = async () => {
-    //     try{
-    //         const receipt = await contract.createCard(title);
-    //         await receipt.wait();
-    //         console.log(`Tx successful with hash: ${receipt.hash}`);
-    //     }
-    //     catch(error){
-    //         console.error('Error creating card:', error);
-    //     }
+    const handleClick = async () => {
+         try{ 
+           const receipt = await contract.createCard(title);
+           await receipt.wait();
+            console.log(`Tx successful with hash: ${receipt.hash}`);
+        }
+       catch(error){
+            console.error('Error creating card:', error);
+         }
         
-    // }
+     }
     const pages = [ 
         <FormPageOne 
             page={page} 
@@ -58,13 +58,13 @@ function JobForm() {
             title={title} 
             nextPage={nextPage}
         />, 
-        <FormPageTwo 
+       /* <FormPageTwo 
             page={page} 
             handleInput={handleInput} 
             description={description} 
             nextPage={nextPage}
             previousPage={previousPage}
-        />,
+        />, */
         <FormPageThree 
             page={page} 
             handleInput={handleInput} 

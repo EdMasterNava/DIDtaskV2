@@ -1,0 +1,33 @@
+{
+  "attester": "PeregrineSelfAttestedSocialKYC",
+  "cTypeTitle": "peregrine discord",
+  "isDownloaded": true,
+  "name": "peregrine discord",
+  "credential": {
+    "claim": {
+      "cTypeHash": "0xd8c61a235204cb9e3c6acb1898d78880488846a7247d325b833243b46d923abe",
+      "contents": {
+        "Discriminator": "Gabe",
+        "User ID": "Gabe",
+        "Username": "Gabe"
+      },
+      "owner": "did:kilt:4p9jGHgDNWUMPFpDL9NfaX2xN4GoYn7ibfLtr2viB3tbt9Bj"
+    },
+    "legitimations": [],
+    "claimHashes": [
+      "0x69c0e792c8fb2b3c3c8527c2e78563dab745131f7989142d4dc0bc9f9a963651",
+      "0x792198cb05a25c7a2ee844bf952d8e85b76a67d3667f8157a59b3eb19e8e13b7",
+      "0xac1e1c4ebbd07bad1ee2eafbff89cd326c5c526a17c9e9a77fb9af9609b68053",
+      "0xe22c52e20f82b3a1c6986680f0136a96c6e06342dcb55f66849e74275e2defb9"
+    ],
+    "claimNonceMap": {
+      "0x649cdc86d4c03058dfe7f11ee8c10451544b6f1eff45bf60eb4bfe0c11fcb46b": "b9ca2139-d3dd-4eec-b930-1667b289c66f",
+      "0x69b3abd3fec8657202c7934c9cb395675f8e6b08128c72754f7b6bd47badea4f": "d6659dad-3d01-4108-bcd3-ad03291548b5",
+      "0x665b3d9c98ae92126ac6608a61ba44760834535328dd5dae8ffb8cc9f5d05fea": "981b3b12-34d4-4298-8e5e-aa3d2eed64d6",
+      "0x2bb97c53b4fb4b967c7c072098379b55d68500e9cb6a78b9361000aae20f5dc7": "51b33220-9b12-4e44-9dd1-c9ec0837df77"
+    },
+    "rootHash": "0x883b4d1c6a49e09df49a5a7c40c597d850144fca37dc4f79d2c8337963e30e94",
+    "delegationId": null
+  },
+  "attested": true
+}

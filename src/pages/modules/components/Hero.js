@@ -11,7 +11,7 @@ import {
 
 import style from '../styles/styles';
 
-import img from  './media/large-hero-img.webp';
+
 
 function Hero() {
     const css = style();
@@ -59,7 +59,7 @@ function Hero() {
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sx={{width: '100%', height:'100%', position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-start', /*bgcolor: 'darkcyan'*/}}>
-                                <img src={img} alt="iLady" style={{width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%', position: 'absolute', bottom: 0, left: 0}}/>
+                                <img style={{width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%', position: 'absolute', bottom: 0, left: 0}}/>
                             </Grid>
                         </Grid>
                     </Box>

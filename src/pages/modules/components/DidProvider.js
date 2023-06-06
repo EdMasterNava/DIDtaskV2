@@ -45,7 +45,7 @@ export const DidProvider = ({ children }) => {
         }, [addKeystore, setDidUri]
     );
 
-    const tryFetchFullDid = React.useCallback(async () => {
+  const tryFetchFullDid = React.useCallback(async () => {
         try {
             if (didUri) {
                 const { identifier, type } = Did.Utils.parseDidUri(didUri);
@@ -161,6 +161,7 @@ export const DidProvider = ({ children }) => {
         </DidContext.Provider>
     );
 };
+
 
 
 //Refrences code
