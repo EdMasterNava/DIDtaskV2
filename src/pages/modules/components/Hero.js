@@ -6,6 +6,8 @@ import {
     Typography
 } from '@mui/material';
 
+import { Link } from 'react-router-dom';
+
 // import * as Kilt from '@kiltprotocol/sdk-js';
 // import { useWalletAuth } from './PolkadotAuth';
 
@@ -46,16 +48,20 @@ function Hero() {
                                     </Typography>    
                                 </Box>
                                 <Box sx={{mt: 3}}>
-                                    <Button variant='contained' sx={{mr: 2, px: 5, bgcolor: '#D359BD', '&:hover': {backgroundColor: 'rgba(211, 89, 189, 0.8)'}}}>
-                                        <Typography sx={{color: 'whitesmoke'}}>
-                                            Create a Task
-                                        </Typography>
-                                    </Button>   
-                                    <Button onClick={connectKiltTestnet} variant='outlined' sx={{border: '1px solid whitesmoke', px: 5, '&:hover': {border: '1px solid whitesmoke', backgroundColor: 'rgba(217, 217, 217, 0.12)'}}}>
-                                        <Typography sx={{color: 'whitesmoke'}}>
-                                            Earn By Completing Tasks
-                                        </Typography>
-                                    </Button> 
+                                    <Link to="/job-form">
+                                        <Button variant='contained' sx={{mr: 2, px: 5, bgcolor: '#D359BD', '&:hover': {backgroundColor: 'rgba(211, 89, 189, 0.8)'}}}>
+                                            <Typography sx={{color: 'whitesmoke'}}>
+                                                Create a Task
+                                            </Typography>
+                                        </Button>
+                                    </Link>
+                                    <Link to="/earn">
+                                        <Button onClick={connectKiltTestnet} variant='outlined' sx={{border: '1px solid whitesmoke', px: 5, '&:hover': {border: '1px solid whitesmoke', backgroundColor: 'rgba(217, 217, 217, 0.12)'}}}>
+                                            <Typography sx={{color: 'whitesmoke'}}>
+                                                Earn By Completing Tasks
+                                            </Typography>
+                                        </Button>
+                                    </Link>
                                 </Box>
                             </Grid>
                             <Grid item xs={6} sx={{width: '100%', height:'100%', position: 'relative', display: 'flex', alignItems: 'flex-end', justifyContent: 'flex-start', /*bgcolor: 'darkcyan'*/}}>

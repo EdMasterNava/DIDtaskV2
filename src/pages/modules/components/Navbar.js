@@ -32,7 +32,7 @@ function Navbar() {
                         </Box>
                     </Link>
                 </Box>
-                <Box sx={{...css.flexCenter}}>
+                {/* <Box sx={{...css.flexCenter}}>
                     <Link to="/job-form" style={{...css.link}}>
                         <Box sx={{mr: 2}}>
                             <Typography varaint='h6' sx={{...css.navbarPaddingAndColor}}>
@@ -54,7 +54,7 @@ function Navbar() {
                             </Typography>
                         </Box>
                     </Link>
-                </Box>
+                </Box> */}
             </Box>
 
             <Box sx={{...css.navbarRightSection}}>

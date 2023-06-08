@@ -99,7 +99,7 @@ function AccountMenu(props) {
                     </Typography>
                 </Box> 
                 <Divider variant='middle' sx={{bgcolor: '#37383D', mt: 2}}/>
-                <Link to='/my-tasks' style={{...css.link}}>
+                {/* <Link to='/my-tasks' style={{...css.link}}>
                     <MenuItem onClick={handleAccountMenuClose} disableRipple sx={{'&:hover' : {bgcolor: 'darkslategray'}}}>
                         <Typography sx={{color: 'whitesmoke'}}>
                             Tasks
@@ -129,7 +129,7 @@ function AccountMenu(props) {
                         </MenuItem>
                     </Link>
                 }
-                <Divider variant='middle' sx={{bgcolor: '#37383D'}}/>
+                <Divider variant='middle' sx={{bgcolor: '#37383D'}}/> */}
                 { didUri ?
                     <Box>
                         <Box sx={{px: 2}}>
