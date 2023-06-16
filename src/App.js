@@ -29,7 +29,7 @@ function App() {
               <EvmProvider>
                 <Navbar />
                 <Routes>
-                  <Route path="/" element={<Home />} />
+                  <Route path="/DIDtaskV2/" element={<Home />} />
                   <Route path="/job-form" element={<JobForm />} />
                   <Route path="/earn" element={<Earn />} />
                   <Route path="/whatsDID" element={<WhatsDID />} />

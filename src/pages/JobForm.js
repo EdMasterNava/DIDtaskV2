@@ -10,14 +10,14 @@ import FormPageThree from './modules/components/FormPageThree';
 
 //Applies Material UI Theme
 import withRoot from './modules/styles/withRoot';
-// import { useEvmAuth } from './modules/components/EvmAuth';
+import { useEvmAuth } from './modules/components/EvmAuth';
 
 function JobForm() {
     const [title, setTitle] = React.useState('');
     const [description, setDescription] = React.useState('');
     const [certifications, setCertification] = React.useState('');
     const [page, setPage] = React.useState(0);
-    // const { contract } = useEvmAuth();
+    const { contract, currentWallet } = useEvmAuth();
     const handleInput = (event) => {
         const e = event.target;
         if(e.id === 'title'){
@@ -26,7 +26,7 @@ function JobForm() {
         if(e.id === 'description'){
             setDescription(e.value);
         }
-        if(e.id === 'certification'){
+        if(e.id === 'certifications'){
             setCertification(e.value);
         }
     }
@@ -40,17 +40,37 @@ function JobForm() {
             setPage(prev => prev - 1);
         }
     }
-    // const handleClick = async () => {
-    //     try{
-    //         const receipt = await contract.createCard(title);
-    //         await receipt.wait();
-    //         console.log(`Tx successful with hash: ${receipt.hash}`);
-    //     }
-    //     catch(error){
-    //         console.error('Error creating card:', error);
-    //     }
+    const handleSubmit = async () => {
+        const newData = {"title": title, "description": description, "certifications": certifications, "signer": currentWallet};
+        const currentCardCount = await getCardCount();
+        let oldData = null;
+        await contract?.getCard(currentCardCount).then(result => {
+            // console.log(result);
+            oldData = JSON.parse(result[1]);
+        })
+        // console.log("Old Data: ", oldData);
+        oldData.push(newData);
+        // console.log("Old Data +  New Data: ", oldData);
+        const data = JSON.stringify(oldData);
+        // console.log("New Data: ", data);
+        try{
+            const receipt = await contract.createCard(data);
+            await receipt.wait();
+            console.log(`Tx successful with hash: ${receipt.hash}`);
+        }
+        catch(error){
+            console.error('Error creating card:', error);
+        }
         
-    // }
+    }
+    const getCardCount = async() => {
+        let cardCount = null;
+        await contract?.cardCount().then(result => {
+            cardCount = result.toNumber();
+        })
+        console.log(cardCount);
+        return cardCount;
+    }
     const pages = [ 
         <FormPageOne 
             page={page} 
@@ -69,7 +89,7 @@ function JobForm() {
             page={page} 
             handleInput={handleInput} 
             certifications={certifications}
-            nextPage={nextPage}
+            handleSubmit={handleSubmit}
             previousPage={previousPage}
         />
     ]

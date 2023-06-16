@@ -51,7 +51,7 @@ function FormPageOne(props) {
                             </Typography> 
                         </Box>
                         <Box sx={{my: 2, bgcolor: 'whitesmoke', width: '100%', borderRadius: 1}}>
-                            <TextField fullWidth onChange={handleInput} value={title} />
+                            <TextField fullWidth onChange={handleInput} value={title} id="title"/>
                         </Box>
                         <Box sx={{width: '100%'}}>
                             <Typography variant='h6' sx={{color: 'whitesmoke'}}>
@@ -65,7 +65,7 @@ function FormPageOne(props) {
                                 </li>
                                 <li>
                                     <Typography variant='h6' sx={{color: 'whitesmoke'}}>
-                                        Graphic desinger needed to design ad creative for multiple campaigns 
+                                        Graphic designer needed to design ad creative for multiple campaigns 
                                     </Typography>
                                 </li>
                                 <li>

@@ -48,14 +48,14 @@ function Hero() {
                                     </Typography>    
                                 </Box>
                                 <Box sx={{mt: 3}}>
-                                    <Link to="/job-form">
+                                    <Link to="/job-form" style={{ ...css.link }}>
                                         <Button variant='contained' sx={{mr: 2, px: 5, bgcolor: '#D359BD', '&:hover': {backgroundColor: 'rgba(211, 89, 189, 0.8)'}}}>
                                             <Typography sx={{color: 'whitesmoke'}}>
                                                 Create a Task
                                             </Typography>
                                         </Button>
                                     </Link>
-                                    <Link to="/earn">
+                                    <Link to="/earn" style={{ ...css.link }}>
                                         <Button onClick={connectKiltTestnet} variant='outlined' sx={{border: '1px solid whitesmoke', px: 5, '&:hover': {border: '1px solid whitesmoke', backgroundColor: 'rgba(217, 217, 217, 0.12)'}}}>
                                             <Typography sx={{color: 'whitesmoke'}}>
                                                 Earn By Completing Tasks

@@ -8,12 +8,15 @@ import {
     Typography
 } from '@mui/material';
 
+import { Link } from 'react-router-dom';
+import style from '../styles/styles';
 
 function FormPageThree(props) {
+    const css = style();
     const page = props.page;
     const certifications = props.certifications;
     const handleInput = props.handleInput;
-    const nextPage = props.nextPage;
+    const handleSubmit = props.handleSubmit;
     const previousPage = props.previousPage;
     return (
         <>
@@ -47,7 +50,7 @@ function FormPageThree(props) {
                             </Typography> 
                         </Box>
                         <Box sx={{mt: 2, bgcolor: 'whitesmoke', width: '100%', borderRadius: 1}}>
-                            <TextField fullWidth onChange={handleInput} value={certifications} id="description" />
+                            <TextField fullWidth onChange={handleInput} value={certifications} id="certifications" />
                         </Box>
                     </Box>
                 </Grid>
@@ -62,11 +65,14 @@ function FormPageThree(props) {
                             Back
                         </Typography>
                     </Button>
-                    <Button onClick={nextPage} sx={{bgcolor: '#D359BD', '&:hover': {backgroundColor: 'rgba(211, 89, 189, 0.8)'}, px: 5, borderRadius: 10}}>
-                        <Typography sx={{color: 'whitesmoke'}}>
-                            Next
-                        </Typography>
-                    </Button>
+                    {/* <Link to="/earn" style={{...css.link}}> */}
+                        <Button onClick={handleSubmit} sx={{bgcolor: '#D359BD', '&:hover': {backgroundColor: 'rgba(211, 89, 189, 0.8)'}, px: 5, borderRadius: 10}}>
+                            <Typography sx={{color: 'whitesmoke'}}>
+                                Submit
+                            </Typography>
+                        </Button>    
+                    {/* </Link> */}
+                    
                 </Box>
             </Box>
         </>

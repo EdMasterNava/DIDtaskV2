@@ -24,7 +24,7 @@ function Navbar() {
         <Box sx={{...css.navbar}}>
             <Box sx={{...css.navbarLeftSection}}>
                 <Box sx={{...css.navbarTitle}}>
-                    <Link to="/" style={{...css.link}}>
+                    <Link to="/DIDtaskV2/" style={{...css.link}}>
                         <Box>
                             <Typography variant='h5' sx={{...css.navbarPaddingAndColor}}>
                                 DIDtask

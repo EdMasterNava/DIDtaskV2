@@ -6,9 +6,14 @@ const webpack = require('webpack');
 module.exports = {
     entry: ['@babel/polyfill', './src/index.js'],
     devtool: process.env.BUILD_ANALYZE ? 'source-map' : false,
+    performance: {
+        maxAssetSize: 9000000, // Adjust the maximum asset size limit (in bytes)
+        maxEntrypointSize: 9000000, // Adjust the maximum entrypoint size limit (in bytes)
+    },
     output: {
         path: path.join(__dirname, './dist'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js',
+        chunkFilename: '[id].[contenthash].js'
     },
     devServer: {
         open: 'chrome'
@@ -103,5 +108,18 @@ module.exports = {
             path: require.resolve('path-browserify'),
             stream: require.resolve('stream-browserify')
         }
-    }
+    },
+    optimization: {
+        splitChunks: {
+          chunks: 'all',
+          minSize: 0,
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name: 'vendors',
+              chunks: 'all',
+            },
+          },
+        },
+      }
 }
